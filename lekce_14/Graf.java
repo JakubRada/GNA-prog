@@ -1,3 +1,5 @@
+package lekce_14;
+
 import java.util.Scanner;
 
 public class Graf{

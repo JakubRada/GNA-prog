@@ -1,3 +1,5 @@
+package lekce_14;
+
 public class ObrazovkovyGraf implements KreslicGrafu {
     double prepocet;
     public ObrazovkovyGraf(int max, int limit){
