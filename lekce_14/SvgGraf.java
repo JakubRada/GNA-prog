@@ -1,3 +1,5 @@
+package lekce_14;
+
 public class SvgGraf implements KreslicGrafu {
     double prepocet;
     int max;
