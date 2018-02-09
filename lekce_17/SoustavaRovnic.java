@@ -73,8 +73,9 @@ public class SoustavaRovnic {
 		int pocet = Integer.parseInt(args[0]);
 		int[][] matice = new int[pocet][pocet + 1];
 		matice = vyplnArray(pocet);
+		tiskni("neupravena matice", matice);
 		matice = upravMatici(matice, pocet);
+		tiskni("upravena matice", matice);
 		vysledky(matice);
 	}
-
 }

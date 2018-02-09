@@ -42,6 +42,10 @@ class Utilities {
                     list = enlargeList(list);
                     list[index] = ch;
                     index += 1;
+                } else if (ch == 'j' || ch == 'J') {
+                    list = enlargeList(list);
+                    list[index] = 'I';
+                    index += 1;
                 }
             }
         }
@@ -159,8 +163,10 @@ class Cipher {
         char[] decryptedPair = new char[2];
         for (int i = 0; i < message.length; i += 2) {
             decryptedPair = decryptPair(new char[] {message[i], message[i + 1]});
+            //ystem.out.printf("[%c,%c] --> [%c,%c]\n",message[i] ,message[i + 1] ,decryptedPair[0], decryptedPair[1]);
             System.out.printf("%c%c", decryptedPair[0], decryptedPair[1]);
         }
+        System.out.println();
     }
 
     public char[] encryptPair(char[] pair) { // zasifruje dvojici podle tabulky
@@ -220,9 +226,11 @@ class Cipher {
                 pair[1] = 'X';
                 index += 1;
             }
+            //System.out.printf("[%c,%c] --> ", pair[0], pair[1]);
             // zasifrovani dvojice
             encryptedPair = encryptPair(pair);
             // vytisknuti dvojice
+            //System.out.printf("[%c,%c]\n", encryptedPair[0], encryptedPair[1]);
             for (int i = 0; i < 2; i += 1) {
                 if ((alreadyPrinted % 5 == 0) && (alreadyPrinted > 1)) {
                     System.out.print(" ");
@@ -231,6 +239,7 @@ class Cipher {
                 alreadyPrinted += 1;
             }
         }
+        System.out.println();
     }
 }
 

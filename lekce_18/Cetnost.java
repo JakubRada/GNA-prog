@@ -20,8 +20,7 @@ public class Cetnost {
 		}
 		sc.close();
 		for (Integer cislo : pocty.keySet()) {
-			System.out.printf("%d ... %d\n", cislo, pocty.get(cislo));
+			System.out.printf("%d => %dkrat\n", cislo, pocty.get(cislo));
 		}
 	}
-
 }
