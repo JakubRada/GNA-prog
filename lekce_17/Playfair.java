@@ -1,4 +1,4 @@
-// package lekce_17;
+package lekce_17;
 
 class Utilities {
     public Utilities() {}
