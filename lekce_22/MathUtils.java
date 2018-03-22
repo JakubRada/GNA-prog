@@ -13,7 +13,4 @@ public class MathUtils {
         }
         return minimum;
     }
-    public static int gcd2(int a, int b) {
-    	
-    }
 }
