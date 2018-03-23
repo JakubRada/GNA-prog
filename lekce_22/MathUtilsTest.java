@@ -9,6 +9,11 @@ import java.lang.IllegalArgumentException;
 public class MathUtilsTest {
  
 	@Test(expected=IllegalArgumentException.class)
+	public void tooLittleNumbers(){
+		MathUtils.gcd();
+	}
+
+	@Test(expected=IllegalArgumentException.class)
 	public void noNumber() {
 		MathUtils.min();
 	}
