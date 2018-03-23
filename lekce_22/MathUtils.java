@@ -1,4 +1,4 @@
-package lekce_22;
+//package lekce_22;
 
 public class MathUtils {
     public static int min(int... numbers) {
@@ -12,8 +12,5 @@ public class MathUtils {
         	}
         }
         return minimum;
-    }
-    public static int gcd2(int a, int b) {
-    	
     }
 }

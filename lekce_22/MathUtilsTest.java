@@ -1,4 +1,4 @@
-package lekce_22;
+//package lekce_22;
 
 import static org.junit.Assert.*;
 

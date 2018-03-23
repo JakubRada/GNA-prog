@@ -1,4 +1,4 @@
-//package lekce_21;
+// package lekce_21;
 
 import java.io.FileReader;
 import java.io.IOException;
