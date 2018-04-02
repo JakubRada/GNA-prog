@@ -5,16 +5,26 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Zarovnani {
-	
+
 	public static ArrayList<String> nacti() {
 		ArrayList<String> text = new ArrayList<String>();
-		Scanner sc = new Scanner(System.in).useDelimiter(" ");
-		
-		while (sc.hasNext()) {
-			text.add(sc.next());
+		Scanner sc = new Scanner(System.in);
+		String a;
+		String[] x;
+		while (sc.hasNextLine()) {
+			a = sc.nextLine();
+			if (a.equals("") || a.equals(" ")) {
+				text.add("\n");
+			} else {
+				x = a.split(" ");
+				for (String o: x) {
+					text.add(o);
+				}
+			}
 		}
-		System.out.println(text);
 		sc.close();
+		System.out.println("~~~list slov~~~");
+		System.out.println(text);
 		return text;
 	}
 	
@@ -22,7 +32,7 @@ public class Zarovnani {
 		final int SIRKA = 25;
 		int radek = 0;
 		ArrayList<String> text = nacti();
-		
+		System.out.println("~~~zacatek tisku~~~");
 		for (String slovo : text) {
 			radek += slovo.length();
 			if (radek > SIRKA) {

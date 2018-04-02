@@ -1,0 +1,267 @@
+Delivered-To: jacub.rada@gmail.com
+Received: by 10.236.184.143 with SMTP id o15csp290421pjr;
+        Tue, 27 Mar 2018 09:14:52 -0700 (PDT)
+X-Google-Smtp-Source: AIpwx4/fI6y+O4zdC7zYTcHr83iX3z8Muy1iCS7u7gMqgv0txZQT3nCtILwuVG3CNtOLSflrnLhv
+X-Received: by 10.28.215.147 with SMTP id o141mr5852wmg.28.1522167283266;
+        Tue, 27 Mar 2018 09:14:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1522167283; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JGX3Y6ldCBuRC2RzMJze+Lidv9gWv8lM+gSf64kqfrmqkMJDWgqo7mC1Job5wyCLrp
+         DlwhxUJHRZUkWUhP49jaZJ2HQHkxXxbn8Nb3VfM62JsRWguFUzY3UVxuso7s0TtLyTcv
+         Gdh2HzfmMMxOWUAI2ExijUgm2Iu0T7jesixTbCtuSRNBJxrsLGqxDUfq1TSdDFhE1iIW
+         c5wkVhknhYzmJCCS9o+vHSBY6LgyAIpX6CaqONdu+gdYur7oj7tIxpz+d5ILgDVVprag
+         r9l3D9AY4guTVx+jzARlnfU2aK2ilQWWPhJgfpVBWXSbgnukNegqRNyXK3rCNH8eCUCo
+         kWWg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-language:in-reply-to:to:mime-version:user-agent:date
+         :message-id:from:references:subject:dkim-signature
+         :arc-authentication-results;
+        bh=updmbmVh/k1fxVaSPjro16irtD3+zQvFN7/aVEFXaRc=;
+        b=iZmuexMnUwesQ45Wi3m9vdLdcSiyz+3czCCrc1AlJKZ55h1ivLEPZthMbM5+g6L1qR
+         Nd2nE7T28kDIfMGPSj/16oc2jANSQbWDbbHq8A/j5rSqhgYNs2cvVm/jz00Xkk3OVlsy
+         5A/XRJt1EE3ZoFIjk8FHmM9kle52C4d3DgLHcQX6Sq8bPjv3MY6mK7kKRXLufKODbsrh
+         9r3OBZqdUZtkhveeNL6XUJRhu84BJ7G2QapN3SFXfKTsIa4e99UpJyLO0liJ2PEMuSV1
+         sH577GlgW0rmuSzSmI127u9eZQDZJGasxly5e/GPl36L9EiAuAK5YbpjmFUwWWlRSvDm
+         mgnQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=fail header.i=@ddmp6.cz header.s=dkim header.b=KoI7/wL2;
+       spf=neutral (google.com: 185.9.116.45 is neither permitted nor denied by best guess record for domain of martin.vejvoda@ddmp6.cz) smtp.mailfrom=martin.vejvoda@ddmp6.cz
+Return-Path: <martin.vejvoda@ddmp6.cz>
+Received: from iredmail.virtis.cz (iredmail.virtis.cz. [185.9.116.45])
+        by mx.google.com with ESMTPS id n1si1200280wri.5.2018.03.27.09.14.42
+        for <jacub.rada@gmail.com>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Tue, 27 Mar 2018 09:14:43 -0700 (PDT)
+Received-SPF: neutral (google.com: 185.9.116.45 is neither permitted nor denied by best guess record for domain of martin.vejvoda@ddmp6.cz) client-ip=185.9.116.45;
+Authentication-Results: mx.google.com;
+       dkim=fail header.i=@ddmp6.cz header.s=dkim header.b=KoI7/wL2;
+       spf=neutral (google.com: 185.9.116.45 is neither permitted nor denied by best guess record for domain of martin.vejvoda@ddmp6.cz) smtp.mailfrom=martin.vejvoda@ddmp6.cz
+Received: from localhost (localhost [127.0.0.1]) by iredmail.virtis.cz (Postfix) with ESMTP id 7FD57A93C3 for <jacub.rada@gmail.com>; Tue, 27 Mar 2018 18:14:42 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at iredmail.virtis.cz
+X-Spam-Flag: NO
+X-Spam-Score: -2.789
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.789 tagged_above=-9999 required=6.31 tests=[BAYES_00=-1.9, DKIM_SIGNED=0.1, HTML_MESSAGE=0.001, RP_MATCHES_RCVD=-1, T_DKIM_INVALID=0.01] autolearn=ham
+Authentication-Results: iredmail.virtis.cz (amavisd-new); dkim=softfail (fail, bad RSA signature) header.i=@ddmp6.cz
+Received: from iredmail.virtis.cz ([127.0.0.1]) by localhost (iredmail.virtis.cz [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id jC9eieHz5YW1 for <jacub.rada@gmail.com>; Tue, 27 Mar 2018 18:14:41 +0200 (CEST)
+Received: from mail.virtis.cz (mail.virtis.intra [192.168.46.36]) by iredmail.virtis.cz (Postfix) with ESMTPS id 7D488A9358 for <jacub.rada@gmail.com>; Tue, 27 Mar 2018 18:14:41 +0200 (CEST)
+Received: from sputnik.ddmp6.cz (sputnik.ddmp6.cz [193.179.42.80]) by mail.virtis.cz (Postfix) with ESMTP id CFD95360293 for <jacub.rada@gmail.com>; Tue, 27 Mar 2018 18:14:20 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1]) by sputnik.ddmp6.cz (Postfix) with ESMTP id 4B5FC3F3EC for <jacub.rada@gmail.com>; Tue, 27 Mar 2018 18:14:17 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ddmp6.cz; h= content-language:content-type:content-type:in-reply-to:to :mime-version:user-agent:date:date:message-id:from:from :references:subject:subject; s=dkim; t=1522167250; x=1523031251;
+	 bh=bgromn96ycTwHwDxgg0vaN8rRy0yHvHl6jDX+Bojgfg=; b=KoI7/wL21wvP WFMngDWDHSRFTYVNvvl9ewjO7cg3Dof1sIf+IGNP100Jkh3LfllUKhjRd18NOCYO vuasX86EL4swiyiXzp7CVyhcp29yQWph0Bjeg6Y0w46N9HbBGsQID47rTOpoSWOt aIbNll/Nv+CTtptiV82b3bbvhEZuZms=
+X-Virus-Scanned: Debian amavisd-new at ddmp6.cz
+Received: from sputnik.ddmp6.cz ([127.0.0.1]) by localhost (callisto.ddmp6.cz [127.0.0.1]) (amavisd-new, port 10024) with ESMTP id PItkFlQlqG8P for <jacub.rada@gmail.com>; Tue, 27 Mar 2018 18:14:10 +0200 (CEST)
+Received: from [192.168.1.193] (unknown [192.168.1.193]) (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits)) (No client certificate requested) by sputnik.ddmp6.cz (Postfix) with ESMTPSA id 78AEB4725; Tue, 27 Mar 2018 18:13:59 +0200 (CEST)
+Subject: Pozvánka na předávání cen za obvodní kolo v programování 2017/2018
+References: <d3481a77-546a-73de-b1aa-0a640759c09f@ddmp6.cz>
+From: Martin Vejvoda <martin.vejvoda@ddmp6.cz>
+X-Forwarded-Message-Id: <d3481a77-546a-73de-b1aa-0a640759c09f@ddmp6.cz>
+Message-ID: <b384f9ca-0c85-0b62-c2a8-7512b17e427d@ddmp6.cz>
+Date: Tue, 27 Mar 2018 18:13:59 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Thunderbird/52.6.0
+MIME-Version: 1.0
+To: "undisclosed-recipients (utajeni adresati)":;
+In-Reply-To: <d3481a77-546a-73de-b1aa-0a640759c09f@ddmp6.cz>
+Content-Type: multipart/mixed; boundary="------------D0FE8EFC738AB35D9AB82C48"
+Content-Language: cs
+
+--------------D0FE8EFC738AB35D9AB82C48
+Content-Type: multipart/alternative; boundary="------------CF15FA74DC58E72DDB01D7FD"
+
+--------------CF15FA74DC58E72DDB01D7FD
+Content-Type: text/plain; charset=iso-8859-2; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dobr� den,
+
+v p��loze p�ikl�d�me pozv�nku na slavnostn� p�ed�n� cen za obvodn� kolo 
+v�programov�n� Prahy 6 a 17. Sout� byla po��d�na ve spolupr�ci 
+s�Fakultou elektrotechnickou �esk�ho vysok�ho u�en� technick�ho v�Praze.
+
+Slavnostn� p�ed�n� v�cn�ch cen (ocen�n bude ka�d� ��astn�k sout�e) 
+prob�hne v prostor�ch FEL �VUT v�Dejvic�ch,
+
+*v�p�tek 6.4.2018 v 9:00 hodin.* N�sledn� prob�hne prohl�dka laborato�� 
+FEL �VUT.
+
+P�edpokl�dan� ukon�en� prohl�dek v�12:00hod.
+
+P�ed�n� se z��astn� p�edstavitel� �VUT FEL, M� Prahy 6, hl. m. Prahy.
+
+Z�organiza�n�ch d�vod� pros�me o potvrzen� Va�� ��asti.
+
+D�kujeme
+
+Martin Vejvoda
+
+-- 
+******************************
+
+
+   Mgr.Bc. Martin Vejvoda
+      vedouc� odd�len�
+Techniky a klubov� �innosti
+
+D�m d�t� a ml�de�e Praha 6
+U Borovi�ek 650/5, 163 00 Praha 6
+Tel.:235 323 333
+martin.vejvoda@ddmp6.cz
+
+www.ddmp6.cz  
+www.volnycaspraha.cz  
+www.prazskyfilmovykufr.cz  
+
+
+      
+
+******************************
+
+
+
+
+
+
+
+
+--------------CF15FA74DC58E72DDB01D7FD
+Content-Type: text/html; charset=iso-8859-2
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-2">
+  </head>
+  <body text="#000000" bgcolor="#FFFFFF">
+    <span
+style="font-size:12.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+      New Roman&quot;;mso-fareast-language:CS">Dobr� den, </span><span
+      style="font-size:12.0pt;font-family:&quot;Times New
+      Roman&quot;,&quot;serif&quot;;mso-fareast-font-family: &quot;Times
+      New Roman&quot;;mso-fareast-language:CS"></span>
+    <div class="moz-forward-container">
+      <p class="MsoNormal"
+        style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+        text-align:justify;line-height:normal"><span
+          style="font-size:12.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS">v p��loze p�ikl�d�me
+          pozv�nku na slavnostn� p�ed�n� cen za obvodn� kolo
+          v�programov�n� Prahy 6 a 17. Sout� byla po��d�na ve
+          spolupr�ci s�Fakultou elektrotechnickou �esk�ho vysok�ho u�en�
+          technick�ho v�Praze. </span><span
+          style="font-size:12.0pt;font-family:&quot;Times New
+          Roman&quot;,&quot;serif&quot;;
+          mso-fareast-font-family:&quot;Times New
+          Roman&quot;;mso-fareast-language:CS"></span></p>
+      <p class="MsoNormal"
+        style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+        text-align:justify;line-height:normal"><span
+          style="font-size:12.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS">Slavnostn� p�ed�n�
+          v�cn�ch cen (ocen�n bude ka�d� ��astn�k sout�e) prob�hne v
+          prostor�ch FEL �VUT v�Dejvic�ch,</span><span
+          style="font-size:12.0pt;font-family:&quot;Times New
+          Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+          &quot;Times New Roman&quot;;mso-fareast-language:CS"></span></p>
+      <p class="MsoNormal"
+        style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+        text-align:justify;line-height:normal"><span
+          style="font-size:12.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS"><b>v�p�tek 6.4.2018
+            v 9:00 hodin.</b> N�sledn� prob�hne prohl�dka laborato�� FEL
+          �VUT.<span style="mso-spacerun:yes">� </span></span><span
+          style="font-size:12.0pt;font-family:&quot;Times New
+          Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+          &quot;Times New Roman&quot;;mso-fareast-language:CS"></span></p>
+      <p class="MsoNormal"
+        style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+        text-align:justify;line-height:normal"><span
+          style="font-size:12.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS">P�edpokl�dan�
+          ukon�en� prohl�dek v�12:00hod.</span><span
+          style="font-size:12.0pt;font-family:&quot;Times New
+          Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+          &quot;Times New Roman&quot;;mso-fareast-language:CS"></span></p>
+      <p class="MsoNormal"
+        style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+        text-align:justify;line-height:normal"><span
+          style="font-size:12.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS">P�ed�n� se z��astn�
+          p�edstavitel� �VUT FEL, M� Prahy 6, <span
+            style="mso-bidi-font-weight:bold">hl. m. Prahy. </span></span><span
+          style="font-size:12.0pt;font-family:&quot;Times New
+          Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+          &quot;Times New Roman&quot;;mso-fareast-language:CS"></span></p>
+      <p class="MsoNormal"
+        style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+        text-align:justify;line-height:normal"><span
+          style="font-size:12.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS">Z�organiza�n�ch
+          d�vod� pros�me o potvrzen� Va�� ��asti.</span><span
+          style="font-size:12.0pt;font-family:&quot;Times New
+          Roman&quot;,&quot;serif&quot;;
+          mso-fareast-font-family:&quot;Times New
+          Roman&quot;;mso-fareast-language:CS"></span></p>
+      <p class="MsoNormal"
+        style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+        text-align:justify;line-height:normal"><span
+          style="font-size:12.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS">D�kujeme </span><span
+          style="font-size:12.0pt; font-family:&quot;Times New
+          Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS"></span></p>
+      <p class="MsoNormal"
+        style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+        text-align:justify;line-height:normal"><span
+          style="font-size:12.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times
+          New Roman&quot;; mso-fareast-language:CS">Martin Vejvoda <br>
+        </span></p>
+      <pre class="moz-signature" cols="72">-- 
+******************************
+
+
+  Mgr.Bc. Martin Vejvoda
+     vedouc� odd�len� 
+Techniky a klubov� �innosti
+
+D�m d�t� a ml�de�e Praha 6
+U Borovi�ek 650/5, 163 00 Praha 6
+Tel.:235 323 333
+<a class="moz-txt-link-abbreviated" href="mailto:martin.vejvoda@ddmp6.cz" moz-do-not-send="true">martin.vejvoda@ddmp6.cz</a>
+
+<a class="moz-txt-link-abbreviated" href="http://www.ddmp6.cz" moz-do-not-send="true">www.ddmp6.cz</a> 
+<a class="moz-txt-link-abbreviated" href="http://www.volnycaspraha.cz" moz-do-not-send="true">www.volnycaspraha.cz</a> 
+<a class="moz-txt-link-abbreviated" href="http://www.prazskyfilmovykufr.cz" moz-do-not-send="true">www.prazskyfilmovykufr.cz</a> 
+
+
+     
+
+******************************
+
+
+
+
+
+
+
+</pre>
+    </div>
+  </body>
+</html>
+
+--------------CF15FA74DC58E72DDB01D7FD--
+--------------D0FE8EFC738AB35D9AB82C48
+Content-Type: application/pdf; name="pozvanka_prog_6_4_2018.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="pozvanka_prog_6_4_2018.pdf"
+
+
+--------------D0FE8EFC738AB35D9AB82C48--
