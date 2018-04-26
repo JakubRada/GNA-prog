@@ -13,28 +13,46 @@ import java.io.File;
  
 public class Stromecek {
     public static void main(String[] args) {
-    	if (args.length > 0) {
-    		if (args[0] == "-d"){
-    			printFiles(new File("."), "", 1);
+		if (args.length > 0) {
+			if (args[0].equals("-d")) {
+    			printFiles(new File("."), "", true);
     		} else {
-    			printFiles(new File("."), "", 0);
+    			printFiles(new File("."), "", false);
     		}
     	} else {
-    		printFiles(new File("."), "", 0);
+    		printFiles(new File("."), "", false);
     	}
     }
  
-    private static void printFiles(File dir, String indent, int folder) {
+    private static void printFiles(File dir, String indent, boolean folder) {
         File[] files = dir.listFiles();
-        int len = files.length;
         int count = 0;
+		int len;
+		if (folder) {
+			len = 0;
+			for (File f : files) {
+				if (f.isDirectory()) {
+					len += 1;
+				}
+			}
+		} else {
+			len = files.length;
+		}
         for (File f : files) {
         	count += 1;
-        	if (count == len) {
-        		System.out.printf("%s`--%s\n", indent, f.getName());
-        	} else {
-        		System.out.printf("%s|--%s\n", indent, f.getName());
-        	}
+			if (folder) {
+				if (count == (len + 1) && f.isDirectory()) {
+        			System.out.printf("%s`--%s\n", indent, f.getName());
+        		} else if (count < (len + 1) && f.isDirectory()) {
+        			System.out.printf("%s|--%s\n", indent, f.getName());
+        		}
+			} else {
+				if (count == len) {
+        			System.out.printf("%s`--%s\n", indent, f.getName());
+        		} else {
+        			System.out.printf("%s|--%s\n", indent, f.getName());
+        		}
+			}
         	if (f.isDirectory()) {
                 if (count == len){
                 	printFiles(f, indent + "    ", folder);
