@@ -41,9 +41,9 @@ public class Stromecek {
         for (File f : files) {
         	count += 1;
 			if (folder) {
-				if (count == (len + 1) && f.isDirectory()) {
+				if (count == len && f.isDirectory()) {
         			System.out.printf("%s`--%s\n", indent, f.getName());
-        		} else if (count < (len + 1) && f.isDirectory()) {
+        		} else if (count < len && f.isDirectory()) {
         			System.out.printf("%s|--%s\n", indent, f.getName());
         		}
 			} else {

@@ -91,7 +91,7 @@
         <jar destfile="${jar.build.dir}/app.jar">
             <fileset dir="${classes.build.dir}" includes="**/*.class" />
             <manifest>
-                <attribute name="Main-Class" value="cz.alisma.alej.prog23.Example" />
+                <attribute name="Main-Class" value="Stromecek" />
             </manifest>
         </jar>
     </target>
